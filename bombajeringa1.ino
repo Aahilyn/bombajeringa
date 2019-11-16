@@ -52,10 +52,10 @@ void setup()
   t_apag = 5000;
   periodo_paso = 100; // en milisegundos, 20 default
   duty = 0.3; //porcentaje
+  encendido = 0;
   
   pinON = duty * periodo_paso;
   pinOFF = (1 - duty) * periodo_paso;
-  encendido = 0;
 }
 
 //Main loop
@@ -121,6 +121,13 @@ void pulsado(unsigned long t_ejeco, unsigned long t_cont, unsigned long t_apag)
 }
 
 void valores() {
+  t_ejec = 60000*10; // en milisegundos, 60000 es 1 minuto
+  t_cont = 15000;
+  t_apag = 5000;
+  periodo_paso = 100; // en milisegundos, 20 default
+  duty = 0.3; //porcentaje
+  encendido = 0;
+  
   Serial.println("Ingrese el volumen");
   while (Serial.available() <= 0) {   // is a character available?
     
